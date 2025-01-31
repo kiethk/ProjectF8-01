@@ -66,14 +66,17 @@ a {
 /* ============================================Header====================================== */
 .header {
     background-color: #e6f0ff;
-    height: 736px;
-    position: relative;
+    height: 78px;
+    z-index: 99;
+    position: sticky;
+    top: 0;
+    display: flex;
+    align-items: center;
 }
 
 .navbar {
     display: flex;
     align-items: center;
-    padding-top: 38px;
 }
 
 .navbar ul {
@@ -109,7 +112,10 @@ a {
 }
 
 .hero {
-    margin-top: 130px;
+    background: #e6f0ff;
+    height: calc(100vh - 78px);
+    display: flex;
+    align-items: center;
 }
 
 .hero .info {
@@ -263,9 +269,8 @@ a {
 
 .featured {
     margin-top: 41px;
-    padding-top: 110px;
+    padding: 110px 0;
     background: #f5fafe;
-    height: 727px;
 }
 
 .featured .sub-title {
@@ -296,7 +301,8 @@ a {
 }
 
 .featured .list {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 30px;
     margin-top: 70px;
 }
@@ -366,7 +372,7 @@ a {
 .stats {
     margin-top: 75px;
     margin-bottom: 50px;
-    padding: 50px 227px 50px 196px;
+    padding: 50px 0;
 }
 
 .stats .row {
@@ -392,7 +398,7 @@ a {
 }
 
 .stats .info {
-    padding: 79px 0 0 165px;
+    margin-left: 165px;
 }
 
 .stats .sub-title {
@@ -522,19 +528,14 @@ a {
 
 .subscription .body {
     position: absolute;
+    padding: 110px 80px;
     bottom: 0;
-    width: 1110px;
+    width: 100%;
     height: 370px;
     border-radius: 20px;
     background: #063183;
 }
 
-.subscription .info {
-    position: absolute;
-    top: 110px;
-    left: 80px;
-    bottom: 110px;
-}
 
 .subscription .info .sub-title {
     color: #fff;
@@ -571,7 +572,7 @@ a {
 
 .footer {
     margin-top: 55px;
-    padding: 50px 165px 58px;
+    padding: 50px 0;
 }
 
 .footer .head {

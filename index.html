@@ -74,7 +74,10 @@
         />
         <link rel="manifest" href="./assets/favicon/manifest.json" />
         <meta name="msapplication-TileColor" content="#ffffff" />
-        <meta name="msapplication-TileImage" content="./assets/favicon/ms-icon-144x144.png" />
+        <meta
+            name="msapplication-TileImage"
+            content="./assets/favicon/ms-icon-144x144.png"
+        />
         <meta name="theme-color" content="#ffffff" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -85,21 +88,37 @@
         <link rel="stylesheet" href="./assets/css/reset.css" />
         <link rel="stylesheet" href="./assets/fonts/stylesheet.css" />
         <link rel="stylesheet" href="./assets/css/styles.css" />
+        <link rel="stylesheet" href="./assets/css/responsive.css" />
 
         <title>F8 Project 01</title>
     </head>
     <body>
         <main>
-            <!-- Header -->
-             
+            <!-- Header PC -->
             <header class="header">
                 <div class="content">
                     <nav class="navbar">
+                        <!-- Tablet/Mobile Menu -->
+                        <label for="menu-checkbox" class="toggle-menu">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 448 512"
+                            >
+                                <path
+                                    fill="currentColor"
+                                    d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"
+                                />
+                            </svg>
+                        </label>
                         <!-- Logo -->
-                        <img src="./assets/img/logo.svg" alt="Besnik." />
+                        <img
+                            src="./assets/img/logo.svg"
+                            alt="Besnik."
+                            class="logo"
+                        />
 
                         <!-- Navigation -->
-                        <ul>
+                        <ul id="pc-nav">
                             <li>
                                 <a href="!#">Home</a>
                             </li>
@@ -115,6 +134,17 @@
                             <li>
                                 <a href="!#">Contact</a>
                             </li>
+                            <li>
+                                <a
+                                    href="!#"
+                                    class="show-on-mobile header-separate"
+                                >
+                                    Sign in
+                                </a>
+                            </li>
+                            <li>
+                                <a href="!#" class="show-on-mobile">Sign up</a>
+                            </li>
                         </ul>
 
                         <!-- Action -->
@@ -123,8 +153,39 @@
                             <a href="!#" class="btn action-btn">Sign up</a>
                         </div>
                     </nav>
+                </div>
+            </header>
+            <!-- Header Tablet/Mobile -->
+            <header class="mobile-header">
+                <input
+                    type="checkbox"
+                    name=""
+                    id="menu-checkbox"
+                    class="menu-checkbox"
+                    hidden
+                />
+                <!-- Overlay -->
+                <label for="menu-checkbox" class="menu-overlay"></label>
+                <!-- Menu content -->
+                <div class="menu-drawer">
+                    <img
+                        src="./assets/img/logo.svg"
+                        alt="Besnik."
+                        class="menu-drawer__logo"
+                    />
 
-                    <div class="hero">
+                    <ul id="mobile-nav"></ul>
+                    <script>
+                        const pcNav = document.querySelector("#pc-nav");
+                        const mobileNav = document.querySelector("#mobile-nav");
+                        mobileNav.innerHTML = pcNav.innerHTML;
+                    </script>
+                </div>
+            </header>
+
+            <main>
+                <div class="hero">
+                    <div class="content">
                         <div class="info">
                             <p class="sub-title">Welcome to Besnik Agency</p>
                             <h1 class="title">
@@ -141,478 +202,499 @@
                         <img
                             src="./assets/img/hero-house.svg"
                             alt="Discover a place
-            you'll love to live."
+                            you'll love to live."
                             class="hero-house"
                         />
                     </div>
                 </div>
-            </header>
 
-            <!-- Clients -->
-            <div class="clients">
-                <div class="content">
-                    <div class="row">
-                        <!-- Logo -->
-                        <img src="./assets/img/logo.svg" alt="Besnik" />
-
-                        <!-- Stars -->
-                        <div class="stars">
-                            <img src="./assets/img/Star.svg" alt="5Star" />
-                        </div>
-                    </div>
-
-                    <div class="row row-desc">
-                        <p class="desc">
-                            More than 45,000+ companies trust besnik
-                        </p>
-                        <p class="desc">5 Star Ratings (2k+ Review)</p>
-                    </div>
-
-                    <div class="image">
-                        <img src="./assets/img/client1.svg" alt="MeUndies" />
-                        <img src="./assets/img/client2.svg" alt="slack" />
-                        <img src="./assets/img/client3.svg" alt="amazon" />
-                        <img src="./assets/img/client4.svg" alt="wooCommerce" />
-                        <img src="./assets/img/client5.svg" alt="sitePoint" />
-                    </div>
-                </div>
-            </div>
-
-            <!-- Guides -->
-            <div class="guides">
-                <div class="content">
-                    <h2 class="sub-title">How its works?</h2>
-                    <p class="desc">
-                        Everything you need to know when you're looking to buy,
-                        rent, or sell - all in one place.
-                    </p>
-
-                    <ul class="list-guide">
-                        <li class="guide-item">
-                            <img
-                                src="./assets/img/icon1.svg"
-                                alt="icon1"
-                                class="icon"
-                            />
-                            <h3 class="title">Buyer Guides</h3>
-                            <a href="!#" class="link">
-                                <span>How to buy</span>
-                                <img
-                                    src="./assets/img/Vector.svg"
-                                    class="arrow"
-                                    alt="Vector"
-                                />
-                            </a>
-                        </li>
-
-                        <li class="guide-item">
-                            <img
-                                src="./assets/img/icon2.svg"
-                                alt="icon2"
-                                class="icon"
-                            />
-                            <h3 class="title">Renter Guides</h3>
-                            <a href="!#" class="link">
-                                <span>How to rent</span>
-                                <img
-                                    src="./assets/img/Vector.svg"
-                                    class="arrow"
-                                    alt="Vector"
-                                />
-                            </a>
-                        </li>
-
-                        <li class="guide-item">
-                            <img
-                                src="./assets/img/icon3.svg"
-                                alt="icon3"
-                                class="icon"
-                            />
-                            <h3 class="title">Seller Guides</h3>
-                            <a href="!#" class="link">
-                                <span>How to sell</span>
-                                <img
-                                    src="./assets/img/Vector.svg"
-                                    class="arrow"
-                                    alt="Vector"
-                                />
-                            </a>
-                        </li>
-                    </ul>
-
-                    <div class="guide-cta">
-                        <a href="!#" class="btn">Sell Full Guidelines</a>
-                    </div>
-                </div>
-            </div>
-            <!-- Featured -->
-            <div class="featured">
-                <div class="content">
-                    <header>
-                        <h2 class="sub-title">Featured Properties</h2>
+                <!-- Clients -->
+                <div class="clients">
+                    <div class="content">
                         <div class="row">
+                            <!-- Logo -->
+                            <img src="./assets/img/logo.svg" alt="Besnik" />
+
+                            <!-- Stars -->
+                            <div class="stars">
+                                <img src="./assets/img/Star.svg" alt="5Star" />
+                            </div>
+                        </div>
+
+                        <div class="row row-desc">
                             <p class="desc">
-                                Everything you need to know when you're looking
+                                More than 45,000+ companies trust besnik
                             </p>
-                            <a href="!#" class="link">
-                                <span>View All Properties</span>
-                                <img
-                                    src="./assets/img/Vector.svg"
-                                    alt=""
-                                    class="arrow"
-                                />
-                            </a>
-                        </div>
-                    </header>
-
-                    <div class="list">
-                        <!-- Item 1 -->
-                        <div class="item">
-                            <a href="!#">
-                                <img
-                                    src="./assets/img/thumb1.jpg"
-                                    alt="Nikko Apartments"
-                                    class="thumb"
-                                />
-                            </a>
-                            <div class="body">
-                                <h3 class="title">
-                                    <a href="!#" class="line-clamp"
-                                        >Nikko Apartments</a
-                                    >
-                                </h3>
-                                <p class="desc">
-                                    8502 Preston Rd. Inglewood, Maine 98280
-                                </p>
-                                <div class="info">
-                                    <div class="couple">
-                                        <img
-                                            src="./assets/img/featured1.svg"
-                                            alt=""
-                                            class="icon"
-                                        />
-                                        <span class="label">5 Beds</span>
-                                    </div>
-
-                                    <div class="couple">
-                                        <img
-                                            src="./assets/img/featured2.svg"
-                                            alt=""
-                                            class="icon"
-                                        />
-                                        <span class="label">2 both</span>
-                                    </div>
-
-                                    <div class="couple">
-                                        <img
-                                            src="./assets/img/featured3.svg"
-                                            alt=""
-                                            class="icon"
-                                        />
-                                        <span class="label">2000 Sqft</span>
-                                    </div>
-                                </div>
-                            </div>
+                            <p class="desc hide-on-mobile">
+                                5 Star Ratings (2k+ Review)
+                            </p>
                         </div>
 
-                        <!-- Item 2 -->
-                        <div class="item">
-                            <a href="!#">
-                                <img
-                                    src="./assets/img/thumb2.jpg"
-                                    alt="CouCou Homestead"
-                                    class="thumb"
-                                />
-                            </a>
-                            <div class="body">
-                                <h3 class="title">
-                                    <a href="!#" class="line-clamp"
-                                        >CouCou Homestead</a
-                                    >
-                                </h3>
-                                <p class="desc">
-                                    8502 Preston Rd. Inglewood, Maine 98280
-                                </p>
-                                <div class="info">
-                                    <div class="couple">
-                                        <img
-                                            src="./assets/img/featured1.svg"
-                                            alt=""
-                                            class="icon"
-                                        />
-                                        <span class="label">5 Beds</span>
-                                    </div>
-
-                                    <div class="couple">
-                                        <img
-                                            src="./assets/img/featured2.svg"
-                                            alt=""
-                                            class="icon"
-                                        />
-                                        <span class="label">2 both</span>
-                                    </div>
-
-                                    <div class="couple">
-                                        <img
-                                            src="./assets/img/featured3.svg"
-                                            alt=""
-                                            class="icon"
-                                        />
-                                        <span class="label">2000 Sqft</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Item 3 -->
-                        <div class="item">
-                            <a href="!#">
-                                <img
-                                    src="./assets/img/thumb3.jpg"
-                                    alt="Lavis 18 Residence"
-                                    class="thumb"
-                                />
-                            </a>
-                            <div class="body">
-                                <h3 class="title">
-                                    <a href="!#" class="line-clamp"
-                                        >Lavis 18 Residence</a
-                                    >
-                                </h3>
-                                <p class="desc">
-                                    8502 Preston Rd. Inglewood, Maine 98280
-                                </p>
-                                <div class="info">
-                                    <div class="couple">
-                                        <img
-                                            src="./assets/img/featured1.svg"
-                                            alt=""
-                                            class="icon"
-                                        />
-                                        <span class="label">5 Beds</span>
-                                    </div>
-
-                                    <div class="couple">
-                                        <img
-                                            src="./assets/img/featured2.svg"
-                                            alt=""
-                                            class="icon"
-                                        />
-                                        <span class="label">2 both</span>
-                                    </div>
-
-                                    <div class="couple">
-                                        <img
-                                            src="./assets/img/featured3.svg"
-                                            alt=""
-                                            class="icon"
-                                        />
-                                        <span class="label">2000 Sqft</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- stats -->
-            <div class="stats">
-                <div class="content">
-                    <div class="row">
-                        <div class="img-block">
+                        <div class="image">
                             <img
-                                class="statsimg"
-                                src="./assets/img/statsimg.jpg"
-                                alt="You’ve found a neighborhood you love."
+                                src="./assets/img/client1.svg"
+                                alt="MeUndies"
                             />
+                            <img src="./assets/img/client2.svg" alt="slack" />
+                            <img src="./assets/img/client3.svg" alt="amazon" />
+                            <img
+                                src="./assets/img/client4.svg"
+                                alt="wooCommerce"
+                            />
+                            <img
+                                src="./assets/img/client5.svg"
+                                alt="sitePoint"
+                            />
+                        </div>
+                    </div>
+                </div>
 
-                            <!-- Trend -->
-                            <div class="stats-trend">
-                                <div class="row">
-                                    <strong class="value"
-                                        >40,000<span>+</span></strong
-                                    >
+                <!-- Guides -->
+                <div class="guides">
+                    <div class="content">
+                        <h2 class="sub-title">How its works?</h2>
+                        <p class="desc">
+                            Everything you need to know when you're looking to
+                            buy, rent, or sell - all in one place.
+                        </p>
+
+                        <ul class="list-guide">
+                            <li class="guide-item">
+                                <img
+                                    src="./assets/img/icon1.svg"
+                                    alt="icon1"
+                                    class="icon"
+                                />
+                                <h3 class="title">Buyer Guides</h3>
+                                <a href="!#" class="link">
+                                    <span>How to buy</span>
                                     <img
-                                        src="./assets/img/Vector-ziczac.svg"
-                                        alt=""
-                                        class="icon"
+                                        src="./assets/img/Vector.svg"
+                                        class="arrow"
+                                        alt="Vector"
                                     />
-                                </div>
+                                </a>
+                            </li>
+
+                            <li class="guide-item">
+                                <img
+                                    src="./assets/img/icon2.svg"
+                                    alt="icon2"
+                                    class="icon"
+                                />
+                                <h3 class="title">Renter Guides</h3>
+                                <a href="!#" class="link">
+                                    <span>How to rent</span>
+                                    <img
+                                        src="./assets/img/Vector.svg"
+                                        class="arrow"
+                                        alt="Vector"
+                                    />
+                                </a>
+                            </li>
+
+                            <li class="guide-item">
+                                <img
+                                    src="./assets/img/icon3.svg"
+                                    alt="icon3"
+                                    class="icon"
+                                />
+                                <h3 class="title">Seller Guides</h3>
+                                <a href="!#" class="link">
+                                    <span>How to sell</span>
+                                    <img
+                                        src="./assets/img/Vector.svg"
+                                        class="arrow"
+                                        alt="Vector"
+                                    />
+                                </a>
+                            </li>
+                        </ul>
+
+                        <div class="guide-cta">
+                            <a href="!#" class="btn">Sell Full Guidelines</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Featured -->
+                <div class="featured">
+                    <div class="content">
+                        <header>
+                            <h2 class="sub-title">Featured Properties</h2>
+                            <div class="row">
                                 <p class="desc">
-                                    By avarage for 2 bedroom apments in San
-                                    Francisco, CA
+                                    Everything you need to know when you're
+                                    looking
                                 </p>
-                                <div class="separate"></div>
+                                <a href="!#" class="link">
+                                    <span>View All Properties</span>
+                                    <img
+                                        src="./assets/img/Vector.svg"
+                                        alt=""
+                                        class="arrow"
+                                    />
+                                </a>
+                            </div>
+                        </header>
 
-                                <div class="avatar-block">
-                                    <div class="avatar-group">
-                                        <img
-                                            src="./assets/img/avatar1.jpg"
-                                            alt=""
-                                            class="avatar"
-                                        />
-                                        <img
-                                            src="./assets/img/avatar2.jpg"
-                                            alt=""
-                                            class="avatar"
-                                        />
-                                    </div>
-
-                                    <div class="avatar-group">
-                                        <img
-                                            src="./assets/img/avatar3.jpg"
-                                            alt=""
-                                            class="avatar"
-                                        />
-                                        <div class="avatar avatar-none">D</div>
-                                        <img
-                                            src="./assets/img/avatar5.jpg"
-                                            alt=""
-                                            class="avatar"
-                                        />
-                                        <img
-                                            src="./assets/img/avatar6.jpg"
-                                            alt=""
-                                            class="avatar"
-                                        />
-                                    </div>
-
-                                    <div class="avatar-group">
-                                        <img
-                                            src="./assets/img/avatar7.jpg"
-                                            alt=""
-                                            class="avatar"
-                                        />
-                                        <img
-                                            src="./assets/img/avatar8.jpg"
-                                            alt=""
-                                            class="avatar"
-                                        />
-                                        <div
-                                            class="avatar avatar-none"
-                                            style="background-color: red"
+                        <div class="list">
+                            <!-- Item 1 -->
+                            <div class="item">
+                                <a href="!#">
+                                    <img
+                                        src="./assets/img/thumb1.jpg"
+                                        alt="Nikko Apartments"
+                                        class="thumb"
+                                    />
+                                </a>
+                                <div class="body">
+                                    <h3 class="title">
+                                        <a href="!#" class="line-clamp"
+                                            >Nikko Apartments</a
                                         >
-                                            K
+                                    </h3>
+                                    <p class="desc">
+                                        8502 Preston Rd. Inglewood, Maine 98280
+                                    </p>
+                                    <div class="info">
+                                        <div class="couple">
+                                            <img
+                                                src="./assets/img/featured1.svg"
+                                                alt=""
+                                                class="icon"
+                                            />
+                                            <span class="label">5 Beds</span>
+                                        </div>
+
+                                        <div class="couple">
+                                            <img
+                                                src="./assets/img/featured2.svg"
+                                                alt=""
+                                                class="icon"
+                                            />
+                                            <span class="label">2 both</span>
+                                        </div>
+
+                                        <div class="couple">
+                                            <img
+                                                src="./assets/img/featured3.svg"
+                                                alt=""
+                                                class="icon"
+                                            />
+                                            <span class="label">2000 Sqft</span>
                                         </div>
                                     </div>
+                                </div>
+                            </div>
 
-                                    <div class="avatar-group">
-                                        <img
-                                            src="./assets/img/avatar10.jpg"
-                                            alt=""
-                                            class="avatar"
-                                        />
-                                        <img
-                                            src="./assets/img/avatar11.jpg"
-                                            alt=""
-                                            class="avatar"
-                                        />
-                                        <img
-                                            src="./assets/img/avatar12.jpg"
-                                            alt=""
-                                            class="avatar"
-                                        />
-                                        <div
-                                            class="avatar avatar-none"
-                                            style="background-color: aqua"
+                            <!-- Item 2 -->
+                            <div class="item">
+                                <a href="!#">
+                                    <img
+                                        src="./assets/img/thumb2.jpg"
+                                        alt="CouCou Homestead"
+                                        class="thumb"
+                                    />
+                                </a>
+                                <div class="body">
+                                    <h3 class="title">
+                                        <a href="!#" class="line-clamp"
+                                            >CouCou Homestead</a
                                         >
-                                            J
+                                    </h3>
+                                    <p class="desc">
+                                        8502 Preston Rd. Inglewood, Maine 98280
+                                    </p>
+                                    <div class="info">
+                                        <div class="couple">
+                                            <img
+                                                src="./assets/img/featured1.svg"
+                                                alt=""
+                                                class="icon"
+                                            />
+                                            <span class="label">5 Beds</span>
+                                        </div>
+
+                                        <div class="couple">
+                                            <img
+                                                src="./assets/img/featured2.svg"
+                                                alt=""
+                                                class="icon"
+                                            />
+                                            <span class="label">2 both</span>
+                                        </div>
+
+                                        <div class="couple">
+                                            <img
+                                                src="./assets/img/featured3.svg"
+                                                alt=""
+                                                class="icon"
+                                            />
+                                            <span class="label">2000 Sqft</span>
                                         </div>
                                     </div>
+                                </div>
+                            </div>
 
-                                    <div class="avatar-group">
-                                        <img
-                                            src="./assets/img/avatar14.jpg"
-                                            alt=""
-                                            class="avatar"
-                                        />
-                                        <div
-                                            class="avatar avatar-none"
-                                            style="background-color: yellow"
+                            <!-- Item 3 -->
+                            <div class="item">
+                                <a href="!#">
+                                    <img
+                                        src="./assets/img/thumb3.jpg"
+                                        alt="Lavis 18 Residence"
+                                        class="thumb"
+                                    />
+                                </a>
+                                <div class="body">
+                                    <h3 class="title">
+                                        <a href="!#" class="line-clamp"
+                                            >Lavis 18 Residence</a
                                         >
-                                            TL
+                                    </h3>
+                                    <p class="desc">
+                                        8502 Preston Rd. Inglewood, Maine 98280
+                                    </p>
+                                    <div class="info">
+                                        <div class="couple">
+                                            <img
+                                                src="./assets/img/featured1.svg"
+                                                alt=""
+                                                class="icon"
+                                            />
+                                            <span class="label">5 Beds</span>
                                         </div>
-                                    </div>
 
-                                    <div class="avatar-group">
-                                        <img
-                                            src="./assets/img/avatar16.jpg"
-                                            alt=""
-                                            class="avatar"
-                                        />
-                                        <img
-                                            src="./assets/img/avatar17.jpg"
-                                            alt=""
-                                            class="avatar"
-                                        />
-                                    </div>
+                                        <div class="couple">
+                                            <img
+                                                src="./assets/img/featured2.svg"
+                                                alt=""
+                                                class="icon"
+                                            />
+                                            <span class="label">2 both</span>
+                                        </div>
 
-                                    <div class="avatar-group">
-                                        <img
-                                            src="./assets/img/avatar18.jpg"
-                                            alt=""
-                                            class="avatar"
-                                        />
-                                        <img
-                                            src="./assets/img/avatar19.jpg"
-                                            alt=""
-                                            class="avatar"
-                                        />
+                                        <div class="couple">
+                                            <img
+                                                src="./assets/img/featured3.svg"
+                                                alt=""
+                                                class="icon"
+                                            />
+                                            <span class="label">2000 Sqft</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="info">
-                            <h2 class="sub-title">
-                                You’ve found a neighborhood you love.
-                            </h2>
-                            <p class="desc">
-                                When you own a home, you’re committing to living
-                                in one location for a while. In a recent Trulia
-                                survey, we found that five out of six
-                                respondents said finding the right neighborhood
-                            </p>
-                        </div>
                     </div>
 
-                    <div class="row row-character">
-                        <div class="character">
-                            <strong class="value">2,500</strong>
-                            <p class="desc">Homes For Sale</p>
+                    <div class="featured__cta show-on-mobile">
+                        <a href="!#" class="view-all btn"
+                            >View All Properties</a
+                        >
+                    </div>
+                </div>
+                <!-- stats -->
+                <div class="stats">
+                    <div class="content">
+                        <div class="row">
+                            <div class="img-block">
+                                <img
+                                    class="statsimg"
+                                    src="./assets/img/statsimg.jpg"
+                                    alt="You’ve found a neighborhood you love."
+                                />
+
+                                <!-- Trend -->
+                                <div class="stats-trend">
+                                    <div class="row">
+                                        <strong class="value"
+                                            >40,000<span>+</span></strong
+                                        >
+                                        <img
+                                            src="./assets/img/Vector-ziczac.svg"
+                                            alt=""
+                                            class="icon"
+                                        />
+                                    </div>
+                                    <p class="desc">
+                                        By avarage for 2 bedroom apments in San
+                                        Francisco, CA
+                                    </p>
+                                    <div class="separate"></div>
+
+                                    <div class="avatar-block">
+                                        <div class="avatar-group">
+                                            <img
+                                                src="./assets/img/avatar1.jpg"
+                                                alt=""
+                                                class="avatar"
+                                            />
+                                            <img
+                                                src="./assets/img/avatar2.jpg"
+                                                alt=""
+                                                class="avatar"
+                                            />
+                                        </div>
+
+                                        <div class="avatar-group">
+                                            <img
+                                                src="./assets/img/avatar3.jpg"
+                                                alt=""
+                                                class="avatar"
+                                            />
+                                            <div class="avatar avatar-none">
+                                                D
+                                            </div>
+                                            <img
+                                                src="./assets/img/avatar5.jpg"
+                                                alt=""
+                                                class="avatar"
+                                            />
+                                            <img
+                                                src="./assets/img/avatar6.jpg"
+                                                alt=""
+                                                class="avatar"
+                                            />
+                                        </div>
+
+                                        <div class="avatar-group">
+                                            <img
+                                                src="./assets/img/avatar7.jpg"
+                                                alt=""
+                                                class="avatar"
+                                            />
+                                            <img
+                                                src="./assets/img/avatar8.jpg"
+                                                alt=""
+                                                class="avatar"
+                                            />
+                                            <div
+                                                class="avatar avatar-none"
+                                                style="background-color: red"
+                                            >
+                                                K
+                                            </div>
+                                        </div>
+
+                                        <div class="avatar-group">
+                                            <img
+                                                src="./assets/img/avatar10.jpg"
+                                                alt=""
+                                                class="avatar"
+                                            />
+                                            <img
+                                                src="./assets/img/avatar11.jpg"
+                                                alt=""
+                                                class="avatar"
+                                            />
+                                            <img
+                                                src="./assets/img/avatar12.jpg"
+                                                alt=""
+                                                class="avatar"
+                                            />
+                                            <div
+                                                class="avatar avatar-none"
+                                                style="background-color: aqua"
+                                            >
+                                                J
+                                            </div>
+                                        </div>
+
+                                        <div class="avatar-group">
+                                            <img
+                                                src="./assets/img/avatar14.jpg"
+                                                alt=""
+                                                class="avatar"
+                                            />
+                                            <div
+                                                class="avatar avatar-none"
+                                                style="background-color: yellow"
+                                            >
+                                                TL
+                                            </div>
+                                        </div>
+
+                                        <div class="avatar-group">
+                                            <img
+                                                src="./assets/img/avatar16.jpg"
+                                                alt=""
+                                                class="avatar"
+                                            />
+                                            <img
+                                                src="./assets/img/avatar17.jpg"
+                                                alt=""
+                                                class="avatar"
+                                            />
+                                        </div>
+
+                                        <div class="avatar-group">
+                                            <img
+                                                src="./assets/img/avatar18.jpg"
+                                                alt=""
+                                                class="avatar"
+                                            />
+                                            <img
+                                                src="./assets/img/avatar19.jpg"
+                                                alt=""
+                                                class="avatar"
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="info">
+                                <h2 class="sub-title">
+                                    You’ve found a neighborhood you love.
+                                </h2>
+                                <p class="desc">
+                                    When you own a home, you’re committing to
+                                    living in one location for a while. In a
+                                    recent Trulia survey, we found that five out
+                                    of six respondents said finding the right
+                                    neighborhood
+                                </p>
+                            </div>
                         </div>
-                        <div class="character">
-                            <strong class="value">5,000+</strong>
-                            <p class="desc">Homes Recently Sold</p>
-                        </div>
-                        <div class="character">
-                            <strong class="value">170+</strong>
-                            <p class="desc">Price Reduced</p>
+
+                        <div class="row row-character">
+                            <div class="character">
+                                <strong class="value">2,500</strong>
+                                <p class="desc">Homes For Sale</p>
+                            </div>
+                            <div class="character">
+                                <strong class="value">5,000+</strong>
+                                <p class="desc">Homes Recently Sold</p>
+                            </div>
+                            <div class="character">
+                                <strong class="value">170+</strong>
+                                <p class="desc">Price Reduced</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <!-- Subscription -->
-            <div class="subscription">
-                <div class="content">
-                    <div class="body">
-                        <div class="info">
-                            <h2 class="sub-title">
-                                Subscribe to our Newsletter!
-                            </h2>
-                            <p class="desc">
-                                Subscribe to our newsletter and stay updated.
-                            </p>
-                            <a href="!#" class="btn">Subscribe</a>
+                <!-- Subscription -->
+                <div class="subscription">
+                    <div class="content">
+                        <div class="body">
+                            <div class="info">
+                                <h2 class="sub-title">
+                                    Subscribe to our Newsletter!
+                                </h2>
+                                <p class="desc">
+                                    Subscribe to our newsletter and stay
+                                    updated.
+                                </p>
+                                <a href="!#" class="btn">Subscribe</a>
+                            </div>
                         </div>
+                        <img
+                            src="./assets/img/home illustration.svg"
+                            alt="home illustration"
+                            class="image"
+                        />
                     </div>
-                    <img
-                        src="./assets/img/home illustration.svg"
-                        alt="home illustration"
-                        class="image"
-                    />
                 </div>
-            </div>
-
+            </main>
             <!-- Footer -->
             <footer class="footer">
                 <div class="content">
@@ -684,7 +766,7 @@
                         </div>
                     </div>
 
-                    <div class="row row-footer">
+                    <div class="row-footer">
                         <img src="./assets/img/logo.svg" alt="" class="logo" />
                         <p class="copyright">
                             Copyright 2020.com, All rights reserved.
